@@ -19,6 +19,6 @@ namespace Microsoft.SourceLink.Gitea
         protected override string ProviderDisplayName => "Gitea";
 
         protected override string? BuildSourceLinkUrl(Uri contentUri, Uri gitUri, string relativeUrl, string revisionId, ITaskItem? hostItem)
-            => UriUtilities.Combine(UriUtilities.Combine(contentUri.ToString(), relativeUrl), "raw/commit/" + revisionId + "/*");
+            => UriUtilities.Combine(UriUtilities.Combine(contentUri.ToString(), relativeUrl), "blob/" + revisionId + "/*");
     }
 }
